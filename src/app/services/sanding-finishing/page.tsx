@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Ruler, Wrench, ArrowRight, Sparkles, Clock, CheckCircle, Zap, Award } from "lucide-react"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Shield, Ruler, Wrench, ArrowRight, Sparkles, Clock, Zap, Award } from "lucide-react"
 
 export default function SandingFinishingPage() {
   return (
@@ -92,7 +92,7 @@ export default function SandingFinishingPage() {
                 A quality sports floor starts with a level surface. Our advanced belt-driven sanding machines allow us to achieve a completely flat and even finish, eliminating ridges, waves and imperfections.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Whether it's a basketball court, netball court, volleyball floor or multipurpose sports hall, we carefully remove old coatings and prepare the timber to create the ideal base for a new, long-lasting finish.
+                Whether it&apos;s a basketball court, netball court, volleyball floor or multipurpose sports hall, we carefully remove old coatings and prepare the timber to create the ideal base for a new, long-lasting finish.
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -164,10 +164,10 @@ export default function SandingFinishingPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Efficient Process, Minimal Downtime</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              We understand that sporting venues often run on tight schedules. That's why we've developed a streamlined sanding and finishing process designed to minimise disruption and get your court back in action quickly.
+              We understand that sporting venues often run on tight schedules. That&apos;s why we&apos;ve developed a streamlined sanding and finishing process designed to minimise disruption and get your court back in action quickly.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              With our efficient machinery and fast-curing finishes, we're able to complete most full sand and finish projects within a short turnaround, without compromising quality or safety.
+              With our efficient machinery and fast-curing finishes, we&apos;re able to complete most full sand and finish projects within a short turnaround, without compromising quality or safety.
             </p>
           </motion.div>
         </div>

@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Clock, Sparkles, CheckCircle, ArrowRight, Droplet, Award } from "lucide-react"
+import { Shield, Clock, Sparkles, CheckCircle, ArrowRight, Award } from "lucide-react"
 
 export default function RecoatingMaintenancePage() {
   return (
@@ -52,7 +52,7 @@ export default function RecoatingMaintenancePage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/20 shadow-2xl">
               <p className="text-lg md:text-xl text-white leading-relaxed mb-4">
-                A high-quality timber sports floor is a big investment — and one that deserves the right care. Regular cleaning and annual recoating aren't just about keeping your floor looking fresh; they're essential for maintaining safety, grip, and performance.
+                A high-quality timber sports floor is a big investment — and one that deserves the right care. Regular cleaning and annual recoating aren&apos;t just about keeping your floor looking fresh; they&apos;re essential for maintaining safety, grip, and performance.
               </p>
               <p className="text-lg md:text-xl text-emerald-100 leading-relaxed">
                 At Sports Floor Maintenance Australia, we specialise in protecting and rejuvenating timber sports floors across gyms, stadiums, and recreation centres. Our professional recoating service restores the gloss, traction, and durability your floor needs to perform at its best all year round.

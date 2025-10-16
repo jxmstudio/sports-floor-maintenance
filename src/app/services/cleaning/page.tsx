@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Sparkles, Shield, Clock, ArrowRight, Droplet, Award, CheckCircle, Building } from "lucide-react"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Sparkles, Shield, ArrowRight, Droplet, Award, CheckCircle } from "lucide-react"
 
 export default function CleaningPage() {
   return (
