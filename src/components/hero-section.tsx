@@ -28,7 +28,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: [12, 0, 12] }}
               transition={{ duration: 2.5, delay: 0.1, repeat: Infinity, repeatType: "reverse" }}
-              className="inline-flex items-center gap-2 bg-emerald-600/95 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg"
+              className="inline-flex items-center gap-2 bg-orange-500/95 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg"
             >
               <Shield className="w-4 h-4" />
               Trusted by 500+ Facilities Across Australia
@@ -44,7 +44,7 @@ export function HeroSection() {
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
                 Professional Sports Floor
                 <br />
-                <span className="text-emerald-700">Maintenance</span>
+                <span className="text-orange-500">Maintenance</span>
                 <br />
                 Services
               </h1>
@@ -63,7 +63,7 @@ export function HeroSection() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Free Quote
@@ -149,19 +149,19 @@ export function HeroSection() {
             {[{
               icon: Shield,
               text: 'Certified & Insured',
-              color: 'text-emerald-700'
+              color: 'text-orange-500'
             }, {
               icon: Clock,
               text: 'Fast Response',
-              color: 'text-emerald-700'
+              color: 'text-orange-500'
             }, {
               icon: Star,
               text: '5-Star Rated',
-              color: 'text-yellow-600'
+              color: 'text-orange-500'
             }, {
               icon: Zap,
               text: 'Professional Equipment',
-              color: 'text-slate-600'
+              color: 'text-blue-800'
             }].map(({ icon: Icon, text, color }) => (
               <motion.div
                 key={text}

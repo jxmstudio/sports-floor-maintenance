@@ -57,11 +57,11 @@ export function Navigation() {
             className="flex items-center"
           >
             <Image
-              src="/logo1(1).png"
+              src="/Sports Floor Maintenance Australia - Final Files.png"
               alt="Sports Floor Maintenance Australia"
-              width={360}
-              height={108}
-              className="h-16 w-auto lg:h-24"
+              width={400}
+              height={400}
+              className="h-16 w-auto lg:h-20"
               priority
             />
           </motion.div>
@@ -78,7 +78,7 @@ export function Navigation() {
                 className="relative font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
 
@@ -120,15 +120,15 @@ export function Navigation() {
               }}
             >
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
             </motion.a>
           </nav>
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-6">
             <div className="text-sm text-gray-600">
-              <div className="font-semibold">(02) 1234 5678</div>
-              <div>info@sportsfloor.com.au</div>
+              <div className="font-semibold">0415894869</div>
+              <div>[Contact Email]</div>
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -137,7 +137,7 @@ export function Navigation() {
             >
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Quote
@@ -205,12 +205,12 @@ export function Navigation() {
               className="px-4 pt-4 space-y-2"
             >
               <div className="text-sm text-gray-600">
-                <div className="font-semibold">(02) 1234 5678</div>
-                <div>info@sportsfloor.com.au</div>
+                <div className="font-semibold">0415894869</div>
+                <div>[Contact Email]</div>
               </div>
               <Button
                 size="sm"
-                className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg"
                 onClick={() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
                   setIsMobileMenuOpen(false)

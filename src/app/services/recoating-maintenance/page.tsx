@@ -22,7 +22,7 @@ export default function RecoatingMaintenancePage() {
               backgroundImage: "url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000&auto=format&fit=crop')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-emerald-900/85 to-slate-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-950/90 to-slate-900/90" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEG0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" />
         </div>
 
@@ -33,7 +33,7 @@ export default function RecoatingMaintenancePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 text-emerald-100 px-6 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-100 px-6 py-2 rounded-full text-sm font-semibold mb-6"
             >
               <Shield className="w-4 h-4" />
               EU13036-2011 Certified
@@ -42,9 +42,9 @@ export default function RecoatingMaintenancePage() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Timber Sports Floor
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-green-300">Recoating & Maintenance</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Recoating & Maintenance</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-emerald-100 font-semibold max-w-4xl mx-auto mb-8">
+            <p className="text-2xl md:text-3xl text-orange-100 font-semibold max-w-4xl mx-auto mb-8">
               Keep Your Sports Floor Looking Great and Performing Its Best
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function RecoatingMaintenancePage() {
               <p className="text-lg md:text-xl text-white leading-relaxed mb-4">
                 A high-quality timber sports floor is a big investment — and one that deserves the right care. Regular cleaning and annual recoating aren&apos;t just about keeping your floor looking fresh; they&apos;re essential for maintaining safety, grip, and performance.
               </p>
-              <p className="text-lg md:text-xl text-emerald-100 leading-relaxed">
+              <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
                 At Sports Floor Maintenance Australia, we specialise in protecting and rejuvenating timber sports floors across gyms, stadiums, and recreation centres. Our professional recoating service restores the gloss, traction, and durability your floor needs to perform at its best all year round.
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function RecoatingMaintenancePage() {
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-sm md:text-base text-emerald-200">{stat.label}</div>
+                <div className="text-sm md:text-base text-orange-200">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -97,22 +97,22 @@ export default function RecoatingMaintenancePage() {
               title: "Protect the Timber",
               desc: "Shield from moisture, sweat, and wear",
               icon: Shield,
-              gradient: "from-emerald-500 to-green-600"
+              gradient: "from-orange-500 to-orange-600"
             },{
               title: "Restore Traction",
               desc: "Safe play and peak performance",
               icon: Award,
-              gradient: "from-blue-500 to-emerald-600"
+              gradient: "from-blue-700 to-blue-800"
             },{
               title: "Revive Appearance",
               desc: "Bring back that rich timber shine",
               icon: Sparkles,
-              gradient: "from-purple-500 to-pink-600"
+              gradient: "from-orange-400 to-orange-500"
             },{
               title: "Extend Floor Life",
               desc: "Save costly repairs or sanding later",
               icon: Clock,
-              gradient: "from-orange-500 to-red-600"
+              gradient: "from-blue-800 to-slate-900"
             }].map((it, i) => (
               <motion.div 
                 key={it.title} 
@@ -122,7 +122,7 @@ export default function RecoatingMaintenancePage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <Card className="h-full border-2 border-gray-100 hover:border-emerald-200 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                   <CardHeader>
                     <div className={`w-16 h-16 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
                       <it.icon className="w-8 h-8 text-white" />
@@ -172,10 +172,10 @@ export default function RecoatingMaintenancePage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               >
-                <div className="relative bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-emerald-300 transition-all h-full">
+                  <div className="relative bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-orange-300 transition-all h-full">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-green-600">{it.step}</div>
-                    <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-orange-600">{it.step}</div>
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
                       <it.icon className="w-7 h-7 text-white" />
                     </div>
                   </div>
@@ -187,9 +187,9 @@ export default function RecoatingMaintenancePage() {
           </div>
 
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-12 text-center">
-            <p className="text-lg text-gray-700">
-              The entire process is efficient and can often be completed within <strong className="text-emerald-700">24–48 hours</strong>, minimising downtime for your venue.
-            </p>
+              <p className="text-lg text-gray-700">
+                The entire process is efficient and can often be completed within <strong className="text-orange-600">24–48 hours</strong>, minimising downtime for your venue.
+              </p>
           </motion.div>
         </div>
       </section>
@@ -208,7 +208,7 @@ export default function RecoatingMaintenancePage() {
 
       {/* CTA Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-green-600 to-emerald-700" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEG0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30" />
         
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -236,7 +236,7 @@ export default function RecoatingMaintenancePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
               <Button 
                 size="lg" 
-                className="bg-white text-emerald-700 hover:bg-gray-50 text-lg px-10 py-7 rounded-xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 font-bold"
+                className="bg-white text-orange-600 hover:bg-gray-50 text-lg px-10 py-7 rounded-xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 font-bold"
               >
                 Get Free Quote
                 <ArrowRight className="w-5 h-5 ml-2" />
