@@ -81,55 +81,53 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Visual Block - Authentic action imagery with overlay */}
+          {/* Right Visual Block - Basketball Action Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div
-              className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[5/4]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to bottom right, rgba(15,23,42,0.25), rgba(16,185,129,0.15)), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1600&auto=format&fit=crop')",
-                backgroundSize: "cover",
-                backgroundPosition: "center"
-              }}
-            >
-              <span className="sr-only">Basketball court floor maintenance</span>
+            {/* Main Basketball Image */}
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?q=80&w=1600&auto=format&fit=crop" 
+                alt="Basketball going through hoop on sports court"
+                className="w-full h-auto object-cover"
+              />
             </div>
 
-            {/* Floating Elements */}
+            {/* Quality Badge - Top Right */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100"
+              className="absolute top-6 right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-green-600" />
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-sm">Quality Guaranteed</p>
+                  <p className="font-bold text-gray-900 text-sm">Quality Guaranteed</p>
                   <p className="text-xs text-gray-600">5-Star Rated</p>
                 </div>
               </div>
             </motion.div>
 
+            {/* 24/7 Service Badge - Bottom Left */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100"
+              className="absolute bottom-6 left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-emerald-700" />
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-sm">24/7 Service</p>
+                  <p className="font-bold text-gray-900 text-sm">24/7 Service</p>
                   <p className="text-xs text-gray-600">Emergency Support</p>
                 </div>
               </div>
