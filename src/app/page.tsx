@@ -2,6 +2,8 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { CleanServicesSection } from "@/components/clean-services-section"
 import { StatsSection } from "@/components/stats-section"
+import { AboutSection } from "@/components/about-section"
+import { ProjectsPreviewSection } from "@/components/projects-preview-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
 import { FAQSection } from "@/components/faq-section"
@@ -16,8 +18,9 @@ export default function Home() {
       <HeroSection />
       <CleanServicesSection />
       <StatsSection />
+      <AboutSection />
+      <ProjectsPreviewSection />
       <TestimonialsSection />
-      <CTASection />
       <FAQSection />
       <ContactFormSection />
       <Footer />

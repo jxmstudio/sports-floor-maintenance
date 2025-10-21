@@ -12,11 +12,11 @@ const faqs = [
   },
   {
     question: "What's the difference between sanding and recoating?",
-    answer: "Recoating involves cleaning the floor and applying a fresh coat of finish over the existing surface - typically done annually. Sanding is a complete refinishing process that removes the old finish and top layer of wood, then applies new coats. Sanding is needed every 10-15 years or when the floor has deep scratches, uneven wear, or the finish is severely damaged."
+    answer: "Recoating involves cleaning the floor and applying a fresh coat of finish over the existing surface - typically done annually. Sanding is a complete refinishing process that removes the old finish and top layer of wood, then applies new coats. A full sand and refinish usually takes 3-5 days for a standard gymnasium. Sanding is needed every 10-15 years or when the floor has deep scratches, uneven wear, or severely damaged finish."
   },
   {
     question: "How long does the recoating process take?",
-    answer: "Most recoating projects can be completed within 24-48 hours, minimizing downtime for your venue. This includes cleaning, applying the new coat, and drying time. We schedule work to suit your facility's availability and can often complete the job over a weekend."
+    answer: "Most recoating projects are completed within 24-48 hours for a standard gymnasium or court. This includes surface prep, cleaning, applying professional-grade coating (we use Bona or Loba commercial systems), and drying time. We schedule work to suit your facility's availability - many venues book us for weekend service to minimize disruption."
   },
   {
     question: "Do you service my area?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "How much does floor maintenance cost?",
-    answer: "Costs vary based on floor size, condition, service type, and location. We provide free, no-obligation quotes after assessing your specific needs. Contact us with your floor dimensions and service requirements for an accurate estimate."
+    answer: "Pricing varies based on floor size, condition, service type, and location. As a guide: recoating typically ranges from $8-15 per sqm, while full sanding and refinishing starts around $25-40 per sqm depending on complexity. Line marking depends on court size and number of sports. We provide free, detailed quotes - contact us with your floor dimensions and we'll assess your specific requirements."
   },
   {
     question: "What makes KTL sprung floors special?",
