@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react"
 import Image from "next/image"
 
 const navPrimary = [
@@ -43,10 +43,10 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200" 
-          : "bg-white/95 backdrop-blur-md"
+          ? "bg-white shadow-lg border-b-2 border-orange-500/20" 
+          : "bg-white/98 backdrop-blur-sm shadow-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,23 +88,34 @@ export function Navigation() {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button className="inline-flex items-center gap-1 font-medium text-gray-700 hover:text-gray-900 transition-colors">
-                Services <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : "rotate-0"}`} />
+              <button className="relative inline-flex items-center gap-1 font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 group">
+                Services 
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : "rotate-0"}`} />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
               </button>
               {isServicesOpen && (
-                <div className="absolute left-0 top-full pt-2 w-64">
-                  <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-2">
-                    {services.map(link => (
-                      <a
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 top-full pt-2 w-72"
+                >
+                  <div className="bg-white rounded-xl shadow-2xl border-2 border-orange-100 p-3 overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600"></div>
+                    {services.map((link, index) => (
+                      <motion.a
                         key={link.name}
                         href={link.href}
-                        className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                        className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 hover:text-orange-700 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500"
                       >
                         {link.name}
-                      </a>
+                      </motion.a>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
 
@@ -125,19 +136,43 @@ export function Navigation() {
           </nav>
 
           {/* Contact Info & CTA */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <div className="text-sm text-gray-600">
-              <div className="font-semibold">0415894869</div>
-              <div>info@sportsfloorau.com.au</div>
+          <div className="hidden lg:flex items-center gap-4">
+            {/* Contact Info with Icons */}
+            <div className="flex items-center gap-4 px-4 py-2 bg-gradient-to-r from-gray-50 to-orange-50 rounded-xl border border-gray-200">
+              <a 
+                href="tel:0415894869" 
+                className="flex items-center gap-2 text-sm group transition-all duration-300"
+              >
+                <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors">
+                  <Phone className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">0415894869</span>
+              </a>
+              
+              <div className="w-px h-6 bg-gray-300"></div>
+              
+              <a 
+                href="mailto:info@sportsfloorau.com.au" 
+                className="flex items-center gap-2 text-sm group transition-all duration-300"
+              >
+                <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center group-hover:bg-blue-800 transition-colors">
+                  <Mail className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-medium text-gray-700 group-hover:text-blue-700 transition-colors">Email Us</span>
+              </a>
             </div>
+
+            {/* Get Quote Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Button
-                size="sm"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 px-6 py-3 rounded-xl"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Quote
