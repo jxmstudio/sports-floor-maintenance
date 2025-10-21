@@ -128,7 +128,7 @@ export function Navigation() {
           <div className="hidden lg:flex items-center space-x-6">
             <div className="text-sm text-gray-600">
               <div className="font-semibold">0415894869</div>
-              <div>[Contact Email]</div>
+              <div>info@sportsfloorau.com.au</div>
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -206,7 +206,7 @@ export function Navigation() {
             >
               <div className="text-sm text-gray-600">
                 <div className="font-semibold">0415894869</div>
-                <div>[Contact Email]</div>
+                <div>info@sportsfloorau.com.au</div>
               </div>
               <Button
                 size="sm"

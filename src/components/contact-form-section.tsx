@@ -85,8 +85,8 @@ export function ContactFormSection() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email Us</h3>
                     <p className="text-gray-600 mb-2">Quick response time</p>
-                    <a href="mailto:info@sportsfloor.com.au" className="text-blue-700 font-semibold hover:text-blue-800">
-                      [Contact Email]
+                    <a href="mailto:info@sportsfloorau.com.au" className="text-blue-700 font-semibold hover:text-blue-800">
+                      info@sportsfloorau.com.au
                     </a>
                   </div>
                 </div>

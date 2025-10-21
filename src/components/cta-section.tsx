@@ -46,9 +46,9 @@ export function CTASection() {
                 <Button
                   variant="outline"
                   className="border-emerald-200 text-emerald-700 hover:bg-emerald-50"
-                  onClick={() => window.open('tel:+61-XXX-XXX-XXX', '_self')}
+                  onClick={() => window.open('tel:0415894869', '_self')}
                 >
-                  Call (02) 1234 5678
+                  Call 0415894869
                 </Button>
               </motion.div>
 
@@ -64,9 +64,9 @@ export function CTASection() {
                 <Button
                   variant="outline"
                   className="border-green-200 text-green-600 hover:bg-green-50"
-                  onClick={() => window.open('mailto:info@sportsfloor.com.au', '_self')}
+                  onClick={() => window.open('mailto:info@sportsfloorau.com.au', '_self')}
                 >
-                  info@sportsfloor.com.au
+                  info@sportsfloorau.com.au
                 </Button>
               </motion.div>
 

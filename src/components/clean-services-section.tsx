@@ -5,67 +5,73 @@ import { useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, Clock, Star, Users, Zap, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 const services = [
   {
-    icon: Shield,
-    title: "Basketball Court Cleaning",
-    description: "Specialized court maintenance, line repainting, and surface treatment for optimal performance.",
+    icon: Sparkles,
+    title: "Sanding & Finishing",
+    description: "Complete floor restoration using belt sanding technology for perfectly flat, smooth surfaces ready for high-performance play.",
     features: [
-      "Court cleaning & sanitization",
-      "Line repainting", 
-      "Surface treatment",
-      "Grip enhancement"
+      "Belt sanding technology",
+      "Professional polyurethane finishes",
+      "Water-based or solvent options",
+      "Minimal venue downtime"
     ],
-    color: "emerald"
+    color: "orange",
+    href: "/services/sanding-finishing"
+  },
+  {
+    icon: Shield,
+    title: "Recoating & Maintenance",
+    description: "Annual recoating services to protect timber, restore traction, and maintain your floor's appearance and performance.",
+    features: [
+      "EU13036-2011 certified",
+      "24-48 hour turnaround",
+      "Grip restoration",
+      "Protective coating application"
+    ],
+    color: "blue",
+    href: "/services/recoating-maintenance"
   },
   {
     icon: Users,
-    title: "Commercial Floor Cleaning",
-    description: "Professional cleaning for office buildings, retail spaces, and warehouses.",
+    title: "Line Marking",
+    description: "Precision line marking for basketball, netball, volleyball, badminton and multi-sport courts to official standards.",
     features: [
-      "Deep cleaning",
-      "Stain removal",
-      "Floor polishing", 
-      "Maintenance programs"
+      "Regulation-compliant marking",
+      "Multi-sport layouts",
+      "Timber & vinyl surfaces",
+      "Color-coded options"
     ],
-    color: "green"
+    color: "purple",
+    href: "/services/line-marking"
   },
   {
     icon: Star,
-    title: "Residential Floor Cleaning",
-    description: "Expert cleaning for hardwood, tile, and carpet in residential properties.",
+    title: "Sports Floor Cleaning",
+    description: "Professional deep cleaning to remove buildup, restore grip, and extend the life of your timber or vinyl sports floor.",
     features: [
-      "Hardwood restoration",
-      "Tile & grout cleaning",
-      "Carpet deep cleaning",
-      "Eco-friendly products"
+      "Annual deep cleaning",
+      "Removes sweat & oils",
+      "Restores surface grip",
+      "Protects floor coating"
     ],
-    color: "purple"
+    color: "green",
+    href: "/services/cleaning"
   },
   {
     icon: Zap,
-    title: "Sports Facility Maintenance",
-    description: "Comprehensive maintenance for gym floors, tennis courts, and indoor sports surfaces.",
+    title: "KTL Sprung Floors",
+    description: "FIBA approved sprung flooring systems - supply and installation for elite sports venues across Australia.",
     features: [
-      "Gym floor maintenance",
-      "Tennis court care",
-      "Indoor sports surfaces",
-      "Equipment cleaning"
+      "FIBA certified systems",
+      "Custom site engineering",
+      "Professional installation",
+      "Competition-grade performance"
     ],
-    color: "orange"
-  },
-  {
-    icon: Clock,
-    title: "Emergency Services",
-    description: "Quick response for urgent cleaning needs and emergency situations.",
-    features: [
-      "24/7 availability",
-      "Rapid response",
-      "Emergency cleanup",
-      "Damage restoration"
-    ],
-    color: "red"
+    color: "red",
+    href: "/services/sprung-floors"
   }
 ]
 
@@ -81,11 +87,11 @@ export function CleanServicesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Our Professional Services
+            Expert Sports Floor Services
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            From basketball courts to commercial spaces, we provide comprehensive floor cleaning 
-            and maintenance solutions tailored to your needs.
+            Comprehensive timber and vinyl sports floor solutions - from complete restoration to annual maintenance. 
+            Trusted by gyms, stadiums, schools and recreation centers across Australia.
           </p>
         </motion.div>
 
@@ -98,7 +104,8 @@ export function CleanServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white">
+              <Link href={service.href} className="block h-full">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white cursor-pointer group">
                 <CardHeader className="pb-4">
                   <div className={`w-12 h-12 bg-${service.color}-100 rounded-lg flex items-center justify-center mb-4`}>
                     <service.icon className={`w-6 h-6 text-${service.color}-600`} />
@@ -122,15 +129,13 @@ export function CleanServicesSection() {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    variant="outline"
-                    className={`w-full border-${service.color}-200 text-${service.color}-600 hover:bg-${service.color}-50`}
-                  >
+                  <div className="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all">
                     Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
                 </CardContent>
               </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -158,7 +163,7 @@ export function CleanServicesSection() {
               >
                 <Button
                   size="lg"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3"
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Get Free Consultation
