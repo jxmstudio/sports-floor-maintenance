@@ -61,7 +61,7 @@ export function AboutSection() {
                   <Target className="w-5 h-5 text-blue-700" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">15+ Years</p>
+                  <p className="font-semibold text-gray-900">25+ Years</p>
                   <p className="text-sm text-gray-600">Industry experience</p>
                 </div>
               </div>

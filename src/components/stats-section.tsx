@@ -6,16 +6,10 @@ import { Shield, Award, CheckCircle, FileCheck } from "lucide-react"
 
 const stats = [
   {
-    number: 15,
+    number: 25,
     suffix: "+",
     label: "Years Experience",
     description: "Professional sports floor expertise"
-  },
-  {
-    number: 500,
-    suffix: "+",
-    label: "Floors Serviced",
-    description: "Completed projects across Australia"
   },
   {
     number: 350,
@@ -83,7 +77,7 @@ export function StatsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
