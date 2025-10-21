@@ -4,19 +4,19 @@ import { motion } from "framer-motion"
 import { Phone, Mail, MapPin } from "lucide-react"
 
 const services = [
-  "Basketball Court Cleaning",
-  "Commercial Floor Cleaning", 
-  "Residential Floor Cleaning",
-  "Sports Facility Maintenance",
-  "Emergency Services"
+  { name: "Sanding & Finishing", href: "/services/sanding-finishing" },
+  { name: "Recoating & Maintenance", href: "/services/recoating-maintenance" },
+  { name: "Line Marking", href: "/services/line-marking" },
+  { name: "Sports Floor Cleaning", href: "/services/cleaning" },
+  { name: "Sprung Floors", href: "/services/sprung-floors" }
 ]
 
 const companyLinks = [
-  "About Us",
-  "Our Process", 
-  "Equipment",
-  "Certifications",
-  "Careers"
+  { name: "All Services", href: "/services" },
+  { name: "About Us", href: "/#about" },
+  { name: "Contact", href: "/#contact" },
+  { name: "Certifications", href: "/#certifications" },
+  { name: "Get Quote", href: "/#contact" }
 ]
 
 export function Footer() {
@@ -53,17 +53,17 @@ export function Footer() {
             <ul className="space-y-2">
               {services.map((service, index) => (
                 <motion.li
-                  key={service}
+                  key={service.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <a
-                    href="#services"
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
+                    href={service.href}
+                    className="text-gray-400 hover:text-orange-400 transition-colors duration-300 text-sm"
                   >
-                    {service}
+                    {service.name}
                   </a>
                 </motion.li>
               ))}
@@ -81,17 +81,17 @@ export function Footer() {
             <ul className="space-y-2">
               {companyLinks.map((link, index) => (
                 <motion.li
-                  key={link}
+                  key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <a
-                    href="#about"
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
+                    href={link.href}
+                    className="text-gray-400 hover:text-orange-400 transition-colors duration-300 text-sm"
                   >
-                    {link}
+                    {link.name}
                   </a>
                 </motion.li>
               ))}
@@ -112,22 +112,22 @@ export function Footer() {
               <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
               <div className="space-y-3">
                 <div className="flex items-center text-gray-400">
-                  <Phone className="w-5 h-5 mr-3 text-blue-500" />
-                  <span>(02) 1234 5678</span>
+                  <Phone className="w-5 h-5 mr-3 text-orange-500" />
+                  <span>0415894869</span>
                 </div>
                 <div className="flex items-center text-gray-400">
-                  <Mail className="w-5 h-5 mr-3 text-blue-500" />
-                  <span>info@sportsfloor.com.au</span>
+                  <Mail className="w-5 h-5 mr-3 text-orange-500" />
+                  <span>[Contact Email]</span>
                 </div>
                 <div className="flex items-center text-gray-400">
-                  <MapPin className="w-5 h-5 mr-3 text-blue-500" />
-                  <span>Sydney, Melbourne, Brisbane</span>
+                  <MapPin className="w-5 h-5 mr-3 text-orange-500" />
+                  <span>SA, VIC, NSW & ACT</span>
                 </div>
               </div>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Service Areas</h4>
-              <p className="text-gray-400 text-sm">Sydney, Melbourne, Brisbane</p>
+              <p className="text-gray-400 text-sm">South Australia, Victoria, New South Wales and Canberra</p>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Business Hours</h4>
@@ -151,13 +151,13 @@ export function Footer() {
             © 2024 Sports Floor Maintenance Australia. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
+            <a href="#" className="text-sm text-gray-400 hover:text-orange-400 transition-colors duration-300">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
+            <a href="#" className="text-sm text-gray-400 hover:text-orange-400 transition-colors duration-300">
               Terms of Service
             </a>
-            <a href="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
+            <a href="#" className="text-sm text-gray-400 hover:text-orange-400 transition-colors duration-300">
               Sitemap
             </a>
           </div>
