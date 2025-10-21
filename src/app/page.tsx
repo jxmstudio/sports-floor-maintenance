@@ -4,6 +4,7 @@ import { CleanServicesSection } from "@/components/clean-services-section"
 import { StatsSection } from "@/components/stats-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
+import { FAQSection } from "@/components/faq-section"
 import { ContactFormSection } from "@/components/contact-form-section"
 import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
@@ -17,6 +18,7 @@ export default function Home() {
       <StatsSection />
       <TestimonialsSection />
       <CTASection />
+      <FAQSection />
       <ContactFormSection />
       <Footer />
       <FloatingCTA />
