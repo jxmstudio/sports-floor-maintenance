@@ -41,7 +41,7 @@ const testimonials = [
     name: "David Thompson",
     role: "Principal",
     company: "Regional High School, VIC",
-    content: "Our gym floor was in pretty rough shape after 15 years. They did a full sand and refinish during summer holidays. Took about 5 days total. Looks brand new now and should last us another decade.",
+    content: "Our gym floor was in pretty rough shape after 25 years. They did a full sand and refinish during summer holidays. Took about 5 days total. Looks brand new now and should last us another decade.",
     rating: 5,
     initials: "DT"
   }

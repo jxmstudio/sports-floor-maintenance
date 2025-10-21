@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "What's the difference between sanding and recoating?",
-    answer: "Recoating involves cleaning the floor and applying a fresh coat of finish over the existing surface - typically done annually. Sanding is a complete refinishing process that removes the old finish and top layer of wood, then applies new coats. A full sand and refinish usually takes 3-5 days for a standard gymnasium. Sanding is needed every 10-15 years or when the floor has deep scratches, uneven wear, or severely damaged finish."
+                answer: "Recoating involves cleaning the floor and applying a fresh coat of finish over the existing surface - typically done annually. Sanding is a complete refinishing process that removes the old finish and top layer of wood, then applies new coats. A full sand and refinish usually takes 3-5 days for a standard gymnasium. Sanding is needed every 10-25 years or when the floor has deep scratches, uneven wear, or severely damaged finish."
   },
   {
     question: "How long does the recoating process take?",

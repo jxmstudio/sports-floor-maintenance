@@ -31,7 +31,7 @@ export function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl">
               <Shield className="w-4 h-4" />
-              Trusted by 500+ Facilities Across Australia
+              Trusted by Facilities Across Australia
             </div>
           </motion.div>
 

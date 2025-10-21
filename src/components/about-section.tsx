@@ -28,7 +28,7 @@ export function AboutSection() {
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p className="text-lg">
                 Sports Floor Maintenance Australia began in Adelaide with a simple mission: deliver professional, 
-                reliable sports floor services that facilities can depend on. Over 15 years later, we've grown to 
+                reliable sports floor services that facilities can depend on. Over 25 years later, we've grown to 
                 service major venues across four states while maintaining that same commitment to quality.
               </p>
               
