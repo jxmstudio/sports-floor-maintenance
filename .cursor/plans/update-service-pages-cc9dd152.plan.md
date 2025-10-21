@@ -77,4 +77,3 @@ Each service page should include:
 - [ ] Update line-marking page with court marking details, timber/vinyl techniques, and multi-sport layouts
 - [ ] Update cleaning page with deep cleaning process, benefits, and ideal venue types
 - [ ] Update sprung-floors page with comprehensive KTL system information, FIBA certification, and installation process
-- [ ] 

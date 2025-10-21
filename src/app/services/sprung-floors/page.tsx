@@ -13,7 +13,7 @@ export default function SprungFloorsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-slate-50 to-emerald-50">
+      <section className="pt-28 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">KTL Sprung Floor Supply & Installation</h1>
@@ -39,21 +39,24 @@ export default function SprungFloorsPage() {
             {[{
               title: "High Quality, Engineered Flooring",
               desc: "KTL's systems are crafted with precision, using solid hardwood boards, resilient sub‑construction, shock‑absorbing pads, and strong coating finishes (e.g. multi‑layer UV coatings).",
-              icon: Shield
+              icon: Shield,
+              gradient: "from-orange-500 to-orange-600"
             },{
               title: "Performance Certified",
               desc: "Many KTL systems are tested and certified to FIBA competition levels, as well as meeting relevant EN/DIN/ISO standards. This ensures they are suitable for elite sport, endurance, and safety.",
-              icon: Award
+              icon: Award,
+              gradient: "from-blue-700 to-blue-800"
             },{
               title: "Multiple Systems for Varied Site Requirements",
               desc: "We can supply fixed systems, portable systems, clip‑together or batten substructures, wedge leveling, etc. This means we can adapt the system to your subfloor conditions, climate, loading requirements, usage intensity etc.",
-              icon: Layers
+              icon: Layers,
+              gradient: "from-orange-600 to-red-600"
             }].map((it, i) => (
               <motion.div key={it.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
-                <Card className="h-full border border-gray-200 hover:shadow-lg transition-shadow">
+                <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                      <it.icon className="w-6 h-6 text-emerald-700" />
+                    <div className={`w-16 h-16 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
+                      <it.icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-xl text-gray-900">{it.title}</CardTitle>
                     <CardDescription className="text-gray-700 leading-relaxed">{it.desc}</CardDescription>
@@ -79,21 +82,24 @@ export default function SprungFloorsPage() {
             {[{
               title: "Moisture Content & Climate Matching",
               desc: "The timber and substructure are conditioned to suit local humidity and moisture conditions. This helps to avoid cracking, warping, shrinkage or over‑expansion due to climate differences.",
-              icon: Droplet
+              icon: Droplet,
+              gradient: "from-blue-700 to-blue-800"
             },{
               title: "Drying & Curing of Subfloor",
               desc: "Before installing the sprung floor, the concrete or structural base must be fully dry. Drying to appropriate moisture levels, sometimes using dehumidification or site‑specific drying techniques, ensures that the substrate will not transfer moisture that damages the floor or reduces its resilience over time.",
-              icon: Clock
+              icon: Clock,
+              gradient: "from-orange-500 to-orange-600"
             },{
               title: "Levelling and Precision",
               desc: "If the existing floor or base is uneven, we use systems (e.g. wedge systems or shims) to level accurately, so that the sprung floor functions uniformly — no dead spots or inconsistent bounce. KTL's PRO II V2 system, for example, is designed to accommodate uneven subfloors.",
-              icon: Ruler
+              icon: Ruler,
+              gradient: "from-orange-400 to-orange-500"
             }].map((it, i) => (
               <motion.div key={it.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
-                <Card className="h-full border border-gray-200">
+                <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                      <it.icon className="w-6 h-6 text-emerald-700" />
+                    <div className={`w-16 h-16 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
+                      <it.icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg text-gray-900">{it.title}</CardTitle>
                     <CardDescription className="text-gray-700 leading-relaxed">{it.desc}</CardDescription>
@@ -220,7 +226,7 @@ export default function SprungFloorsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-emerald-600 to-emerald-700">
+      <section className="py-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get in Touch to Specify Your Sprung Floor</h2>
@@ -233,7 +239,7 @@ export default function SprungFloorsPage() {
                 <p className="text-emerald-50">📧 Email [Contact Email] for system spec sheets and examples</p>
                 <p className="text-emerald-50 mt-3">Get a site visit and custom quote</p>
               </div>
-              <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 mt-6">
+              <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 mt-6">
                 Request Site Visit
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

@@ -22,7 +22,7 @@ export default function SandingFinishingPage() {
               backgroundImage: "url('https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?q=80&w=2000&auto=format&fit=crop')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/85 to-slate-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-950/90 to-slate-900/90" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEG0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" />
         </div>
 
@@ -33,7 +33,7 @@ export default function SandingFinishingPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 text-blue-100 px-6 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-100 px-6 py-2 rounded-full text-sm font-semibold mb-6"
             >
               <Wrench className="w-4 h-4" />
               Belt Sanding Technology
@@ -42,9 +42,9 @@ export default function SandingFinishingPage() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Timber Sports Floor
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Sanding & Finishing</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Sanding & Finishing</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-blue-100 font-semibold max-w-4xl mx-auto mb-8">
+            <p className="text-2xl md:text-3xl text-orange-100 font-semibold max-w-4xl mx-auto mb-8">
               Perfectly Flat Sanding with Durable Sports Coatings
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ export default function SandingFinishingPage() {
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-sm md:text-base text-blue-200">{stat.label}</div>
+                <div className="text-sm md:text-base text-orange-200">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -126,21 +126,24 @@ export default function SandingFinishingPage() {
             {[{
               title: "High-Gloss Polyurethane",
               desc: "Maximum durability and visual impact for professional venues",
-              icon: Sparkles
+              icon: Sparkles,
+              gradient: "from-orange-500 to-orange-600"
             },{
               title: "Low-Sheen Professional",
               desc: "Reduced glare and improved performance for competitive play",
-              icon: Shield
+              icon: Shield,
+              gradient: "from-blue-700 to-blue-800"
             },{
               title: "Eco-Friendly Water-Based",
               desc: "Fast-drying coatings with reduced odour for faster return to play",
-              icon: Zap
+              icon: Zap,
+              gradient: "from-orange-600 to-red-600"
             }].map((it, i) => (
               <motion.div key={it.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
-                <Card className="h-full border border-gray-200 hover:shadow-lg transition-shadow">
+                <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                      <it.icon className="w-6 h-6 text-emerald-700" />
+                    <div className={`w-16 h-16 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
+                      <it.icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg text-gray-900">{it.title}</CardTitle>
                     <CardDescription className="text-gray-600">{it.desc}</CardDescription>
@@ -219,7 +222,7 @@ export default function SandingFinishingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-emerald-600 to-emerald-700">
+      <section className="py-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Book Your Sanding & Finishing Service</h2>
@@ -231,7 +234,7 @@ export default function SandingFinishingPage() {
                 <p className="font-semibold text-2xl mb-2">📞 Contact us: 0415894869</p>
                 <p className="text-emerald-50">Get a free quote or discuss your next sanding and finishing project</p>
               </div>
-              <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 mt-6">
+              <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 mt-6">
                 Get Free Quote
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
