@@ -243,7 +243,7 @@ export function ContactFormSection() {
                       size="lg"
                       className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                     >
-                      Send Message
+                      Submit Request
                       <Send className="w-5 h-5 ml-2" />
                     </Button>
                   </div>

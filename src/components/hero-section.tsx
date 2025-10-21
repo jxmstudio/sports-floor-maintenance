@@ -66,7 +66,7 @@ export function HeroSection() {
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Get Free Quote
+                Request Your Quote
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
 
@@ -76,7 +76,7 @@ export function HeroSection() {
                 className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-10 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                View Services
+                Explore Services
               </Button>
             </motion.div>
           </motion.div>

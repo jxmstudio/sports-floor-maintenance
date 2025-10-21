@@ -33,11 +33,11 @@ export function FloatingCTA() {
         >
           <Button
             size="lg"
-            className="rounded-full shadow-lg bg-emerald-600 hover:bg-emerald-700 text-white"
-            onClick={() => window.open('tel:+61-XXX-XXX-XXX', '_self')}
+            className="rounded-full shadow-lg bg-orange-500 hover:bg-orange-600 text-white"
+            onClick={() => window.open('tel:0415894869', '_self')}
           >
             <Phone className="w-5 h-5 mr-2" />
-            Call Now
+            Quick Call
           </Button>
         </motion.div>
       )}

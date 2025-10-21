@@ -166,7 +166,7 @@ export function CleanServicesSection() {
                   className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Get Free Consultation
+                  Schedule Consultation
                 </Button>
               </motion.div>
               <motion.div
