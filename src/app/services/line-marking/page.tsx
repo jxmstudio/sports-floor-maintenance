@@ -13,20 +13,71 @@ export default function LineMarkingPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-28 pb-20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1519766304817-4f37bda74a26?q=80&w=2000&auto=format&fit=crop')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-indigo-900/85 to-slate-900/90" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEG0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sports Floor Line Marking</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Expert line marking services for a wide range of indoor sports with precise, regulation-compliant markings</p>
+            {/* Trust Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-100 px-6 py-2 rounded-full text-sm font-semibold mb-6"
+            >
+              <Ruler className="w-4 h-4" />
+              Regulation-Compliant Marking
+            </motion.div>
+
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Sports Floor
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Line Marking</span>
+            </h1>
+            <p className="text-2xl md:text-3xl text-orange-100 font-semibold max-w-4xl mx-auto mb-8">
+              Precise, Professional Court Line Marking
+            </p>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="max-w-4xl mx-auto mt-8">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              At Sports Floor Maintenance Australia, we provide expert line marking services for a wide range of indoor sports, including basketball, netball, volleyball, badminton, and more. Whether you're updating an existing court or marking out a brand new layout, our team delivers precise, regulation-compliant markings on both timber and vinyl floors.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed mt-4">
-              We proudly service clients across South Australia, Victoria, New South Wales, and Canberra, offering reliable and high-quality results every time.
-            </p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/20 shadow-2xl">
+              <p className="text-lg md:text-xl text-white leading-relaxed mb-4">
+                At Sports Floor Maintenance Australia, we provide expert line marking services for a wide range of indoor sports, including basketball, netball, volleyball, badminton, and more. Whether you're updating an existing court or marking out a brand new layout, our team delivers precise, regulation-compliant markings on both timber and vinyl floors.
+              </p>
+              <p className="text-lg md:text-xl text-orange-100 leading-relaxed">
+                We proudly service clients across South Australia, Victoria, New South Wales, and Canberra, offering reliable and high-quality results every time.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Stats Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
+          >
+            {[
+              { number: "6+", label: "Sports Marked" },
+              { number: "Official", label: "Regulations" },
+              { number: "Multi-Sport", label: "Layouts" },
+              { number: "Color-Coded", label: "Options" }
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>
+                <div className="text-sm md:text-base text-orange-200">{stat.label}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -81,7 +132,13 @@ export default function LineMarkingPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
               <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
@@ -95,7 +152,13 @@ export default function LineMarkingPage() {
               </Card>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
               <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center mb-4 shadow-lg">

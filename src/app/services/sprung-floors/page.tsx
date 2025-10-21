@@ -13,28 +13,71 @@ export default function SprungFloorsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-28 pb-20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?q=80&w=2000&auto=format&fit=crop')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-indigo-950/90 to-slate-900/90" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEG0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
             {/* FIBA Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 text-orange-800 px-6 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-100 px-6 py-2 rounded-full text-sm font-semibold mb-6"
             >
               <Award className="w-4 h-4" />
               FIBA Approved Systems
             </motion.div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">KTL Sprung Floor Supply & Installation</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Premium FIBA approved sprung flooring solutions for sports venues</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              KTL Sprung Floor
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Supply & Installation</span>
+            </h1>
+            <p className="text-2xl md:text-3xl text-orange-100 font-semibold max-w-4xl mx-auto mb-8">
+              Premium FIBA Approved Sprung Flooring Solutions
+            </p>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="max-w-4xl mx-auto mt-8">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              At Sports Floor Maintenance Australia, we supply and install <strong className="text-orange-600">FIBA approved</strong> KTL sprung flooring systems—a world‑class solution combining durability, performance, and tailored engineering. Whether you're building a gymnasium, stadium, recreation centre or multi‑purpose hall, we deliver premium sprung floors designed for your site's specific needs and certified for professional competition.
-            </p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/20 shadow-2xl">
+              <p className="text-lg md:text-xl text-white leading-relaxed mb-4">
+                At Sports Floor Maintenance Australia, we supply and install <strong className="text-orange-300">FIBA approved</strong> KTL sprung flooring systems—a world‑class solution combining durability, performance, and tailored engineering.
+              </p>
+              <p className="text-lg md:text-xl text-orange-100 leading-relaxed">
+                Whether you're building a gymnasium, stadium, recreation centre or multi‑purpose hall, we deliver premium sprung floors designed for your site's specific needs and certified for professional competition.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Stats Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
+          >
+            {[
+              { number: "FIBA", label: "Certified Systems" },
+              { number: "Elite", label: "Performance Level" },
+              { number: "Custom", label: "Site Engineering" },
+              { number: "Pro", label: "Installation Team" }
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>
+                <div className="text-sm md:text-base text-orange-200">{stat.label}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -63,7 +106,14 @@ export default function SprungFloorsPage() {
               icon: Layers,
               gradient: "from-orange-600 to-red-600"
             }].map((it, i) => (
-              <motion.div key={it.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
+              <motion.div 
+                key={it.title} 
+                initial={{ opacity: 0, y: 16 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              >
                 <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                   <CardHeader>
                     <div className={`w-16 h-16 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
@@ -106,7 +156,14 @@ export default function SprungFloorsPage() {
               icon: Ruler,
               gradient: "from-orange-400 to-orange-500"
             }].map((it, i) => (
-              <motion.div key={it.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
+              <motion.div 
+                key={it.title} 
+                initial={{ opacity: 0, y: 16 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              >
                 <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                   <CardHeader>
                     <div className={`w-16 h-16 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
@@ -130,11 +187,17 @@ export default function SprungFloorsPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <Card className="h-full border border-gray-200 shadow-lg">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
+              <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                    <Zap className="w-6 h-6 text-emerald-700" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-700 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                    <Zap className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl text-gray-900">Fast, Professional Installation</CardTitle>
                   <CardDescription className="text-gray-700 text-base leading-relaxed mt-3">
@@ -144,11 +207,17 @@ export default function SprungFloorsPage() {
               </Card>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <Card className="h-full border border-gray-200 shadow-lg">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
+              <Card className="h-full border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                    <Shield className="w-6 h-6 text-emerald-700" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                    <Shield className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl text-gray-900">Durability & Warranty</CardTitle>
                   <CardDescription className="text-gray-700 text-base leading-relaxed mt-3">
@@ -252,9 +321,9 @@ export default function SprungFloorsPage() {
               </div>
               <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 mt-6">
                 Request Site Visit
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
           </motion.div>
         </div>
       </section>

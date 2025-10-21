@@ -238,9 +238,9 @@ export default function RecoatingMaintenancePage() {
                 size="lg" 
                 className="bg-white text-orange-600 hover:bg-gray-50 text-lg px-10 py-7 rounded-xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 font-bold"
               >
-                Get Free Quote
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              Get Free Quote
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
               <Button 
                 size="lg" 
                 variant="outline"
@@ -262,7 +262,7 @@ export default function RecoatingMaintenancePage() {
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
                 <span>Servicing All Australia</span>
-              </div>
+          </div>
             </div>
           </motion.div>
         </div>
