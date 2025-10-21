@@ -2,176 +2,137 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Clock, Star, CheckCircle, Zap } from "lucide-react"
+import { ArrowRight, Shield, Clock, Award, DollarSign } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-white to-emerald-50 py-20 lg:py-32 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+    <section className="relative py-32 lg:py-40 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?q=80&w=2000&auto=format&fit=crop')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-slate-900/85 to-blue-900/90" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEG0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content Block */}
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-8">
+          {/* Trust Badge */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex justify-center"
           >
-            {/* Trust Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: [12, 0, 12] }}
-              transition={{ duration: 2.5, delay: 0.1, repeat: Infinity, repeatType: "reverse" }}
-              className="inline-flex items-center gap-2 bg-orange-500/95 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg"
-            >
+            <div className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl">
               <Shield className="w-4 h-4" />
               Trusted by 500+ Facilities Across Australia
-            </motion.div>
-
-            {/* Main Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-4"
-            >
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
-                Professional Sports Floor
-                <br />
-                <span className="text-orange-500">Maintenance</span>
-                <br />
-                Services
-              </h1>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
-                Expert sanding, finishing, and maintenance for basketball courts, gymnasiums, and sports facilities. 
-                Professional-grade equipment and certified technicians across Australia.
-              </p>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Request Your Quote
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-10 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Explore Services
-              </Button>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Visual Block - Basketball Action Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
-          >
-            {/* Main Basketball Image */}
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?q=80&w=1600&auto=format&fit=crop" 
-                alt="Basketball going through hoop on sports court"
-                className="w-full h-auto object-cover"
-              />
             </div>
-
-            {/* Quality Badge - Top Right */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="absolute top-6 right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900 text-sm">Quality Guaranteed</p>
-                  <p className="text-xs text-gray-600">5-Star Rated</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 24/7 Service Badge - Bottom Left */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="absolute bottom-6 left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900 text-sm">24/7 Service</p>
-                  <p className="text-xs text-gray-600">Emergency Support</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
-        </div>
 
-        {/* Feature Strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-16 lg:mt-20 pt-10 border-t border-gray-200"
-        >
-          <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10">
-            {[{
-              icon: Shield,
-              text: 'Certified & Insured',
-              color: 'text-orange-500'
-            }, {
-              icon: Clock,
-              text: 'Fast Response',
-              color: 'text-orange-500'
-            }, {
-              icon: Star,
-              text: '5-Star Rated',
-              color: 'text-orange-500'
-            }, {
-              icon: Zap,
-              text: 'Professional Equipment',
-              color: 'text-blue-800'
-            }].map(({ icon: Icon, text, color }) => (
+          {/* Main Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="space-y-6"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Crafting Stunning Sports Floors{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-500">
+                That Perform
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
+              Work with <span className="text-white font-semibold">real experts</span>, not just a platform. All bundled into{' '}
+              <span className="text-yellow-400 font-bold">one simple price</span>. And yep,{' '}
+              <span className="text-yellow-400 font-bold">you get 25+ years of experience</span>{' '}
+              with certified technicians who know your floor.
+            </p>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-6 text-lg font-bold rounded-xl shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Let&apos;s Work Together
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-10 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              View My Work
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </motion.div>
+
+          {/* Feature Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
+          >
+            {[
+              {
+                icon: Shield,
+                title: "FIBA Certified",
+                description: "Competition-grade installations",
+                gradient: "from-orange-500 to-orange-600"
+              },
+              {
+                icon: Clock,
+                title: "Fast Turnaround",
+                description: "24-48 hour service available",
+                gradient: "from-yellow-500 to-orange-500"
+              },
+              {
+                icon: Award,
+                title: "25+ Years Experience",
+                description: "Trusted by stadiums & schools",
+                gradient: "from-orange-500 to-orange-600"
+              },
+              {
+                icon: DollarSign,
+                title: "Fixed Pricing",
+                description: "No surprise costs, ever",
+                gradient: "from-yellow-500 to-orange-500"
+              }
+            ].map((feature, index) => (
               <motion.div
-                key={text}
-                whileHover={{ y: -2, opacity: 0.95 }}
-                className="flex items-center gap-3 px-3 py-2 rounded-md"
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group"
               >
-                <Icon className={`w-5 h-5 ${color}`} />
-                <span className="text-gray-700 font-medium text-sm md:text-base">{text}</span>
+                <div className={`w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                <p className="text-sm text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
