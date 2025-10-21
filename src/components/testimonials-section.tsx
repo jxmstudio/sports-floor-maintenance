@@ -6,52 +6,44 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Mark Patterson",
+    role: "Facilities Coordinator",
+    company: "Oakwood Recreation Centre",
+    content: "Had them recoat our main basketball court over the long weekend. Job was done in 48 hours like they promised and the grip is perfect now. Players noticed the difference immediately. Great communication throughout.",
+    rating: 5,
+    initials: "MP"
+  },
+  {
+    name: "Rebecca Chen",
+    role: "Sports Director",
+    company: "Adelaide Grammar School",
+    content: "We got the FIBA approved sprung floor installed in our new gymnasium. The whole process from site prep to final line marking took about 3 weeks. Very professional team - they explained everything clearly and the floor plays beautifully.",
+    rating: 5,
+    initials: "RC"
+  },
+  {
+    name: "Tom Williams",
     role: "Facility Manager",
-    company: "Sydney Sports Complex",
-    content: "Outstanding service! Our basketball courts have never looked better. The team was professional, punctual, and the results exceeded our expectations. Highly recommended for any sports facility.",
+    company: "Melbourne Indoor Sports Centre",
+    content: "Been using them for our annual recoating for the past 4 years. Always reliable, floors look great after each service. Worth the investment to keep the playing surface in top condition.",
     rating: 5,
-    initials: "SJ"
+    initials: "TW"
   },
   {
-    name: "Michael Chen",
-    role: "Property Manager",
-    company: "Commercial Properties Ltd",
-    content: "We've been using Sports Floor Maintenance for our commercial cleaning needs for over 3 years. Their attention to detail and reliability is unmatched. Our floors always look pristine.",
+    name: "Sarah McKenzie",
+    role: "Operations Manager",
+    company: "Fitness First - Sydney",
+    content: "Needed urgent line remarking for a tournament. They fitted us in within a week and did basketball + netball courts with different color schemes. Finished on time and the lines are crisp and clear.",
     rating: 5,
-    initials: "MC"
-  },
-  {
-    name: "Emma Williams",
-    role: "Homeowner",
-    company: "Residential Client",
-    content: "Amazing work on our hardwood floors! They restored them to like-new condition. The team was respectful, clean, and left our home spotless. Will definitely use them again.",
-    rating: 5,
-    initials: "EW"
+    initials: "SM"
   },
   {
     name: "David Thompson",
-    role: "Gym Owner",
-    company: "FitLife Gym",
-    content: "Professional, efficient, and thorough. Our gym floors are always clean and safe for our members. The emergency service they provide gives us peace of mind.",
+    role: "Principal",
+    company: "Regional High School, VIC",
+    content: "Our gym floor was in pretty rough shape after 15 years. They did a full sand and refinish during summer holidays. Took about 5 days total. Looks brand new now and should last us another decade.",
     rating: 5,
     initials: "DT"
-  },
-  {
-    name: "Lisa Rodriguez",
-    role: "School Administrator",
-    company: "Melbourne High School",
-    content: "Excellent service for our school's sports facilities. They work around our schedule and always deliver quality results. The students and staff are very happy with the clean floors.",
-    rating: 5,
-    initials: "LR"
-  },
-  {
-    name: "James Wilson",
-    role: "Retail Manager",
-    company: "City Shopping Center",
-    content: "Reliable and professional service. They handle our large retail space efficiently and always meet our high standards. Great value for money and excellent customer service.",
-    rating: 5,
-    initials: "JW"
   }
 ]
 

@@ -2,43 +2,38 @@
 
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import { Shield, Award, CheckCircle, FileCheck } from "lucide-react"
 
 const stats = [
   {
     number: 15,
     suffix: "+",
     label: "Years Experience",
-    description: "Professional floor maintenance expertise"
+    description: "Professional sports floor expertise"
   },
   {
     number: 500,
     suffix: "+",
-    label: "Floors Cleaned",
-    description: "Successfully completed projects"
+    label: "Floors Serviced",
+    description: "Completed projects across Australia"
   },
   {
-    number: 300,
+    number: 350,
     suffix: "+",
-    label: "Happy Clients",
-    description: "Satisfied customers across Australia"
+    label: "Satisfied Clients",
+    description: "Gyms, schools and sports facilities"
   },
   {
-    number: 4.9,
-    suffix: "/5",
-    label: "Client Rating",
-    description: "Average customer satisfaction score"
+    number: 48,
+    suffix: "hr",
+    label: "Fast Turnaround",
+    description: "Typical recoating completion time"
   },
   {
-    number: 100,
-    suffix: "%",
-    label: "Insured & Certified",
-    description: "Fully licensed and insured service"
-  },
-  {
-    number: 24,
-    suffix: "/7",
-    label: "Emergency Service",
-    description: "Round-the-clock availability"
+    number: 4,
+    suffix: " States",
+    label: "Service Coverage",
+    description: "SA, VIC, NSW & ACT"
   }
 ]
 
@@ -88,7 +83,7 @@ export function StatsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -98,7 +93,7 @@ export function StatsSection() {
               viewport={{ once: true }}
               className="text-center"
             >
-                      <div className="text-3xl lg:text-4xl font-bold text-emerald-700 mb-2">
+                      <div className="text-3xl lg:text-4xl font-bold text-orange-600 mb-2">
                 <AnimatedCounter end={stat.number} suffix={stat.suffix} />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">
@@ -111,7 +106,7 @@ export function StatsSection() {
           ))}
         </div>
 
-        {/* Trust Badges */}
+        {/* Certifications */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,34 +114,38 @@ export function StatsSection() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-gray-900 text-center mb-8">
-              Certified and Insured Professionals
+          <div className="bg-gradient-to-br from-orange-50 to-blue-50 rounded-2xl p-8 border border-orange-100">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              Professional Certifications & Standards
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">🛡️</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Award className="w-8 h-8 text-white" />
                 </div>
-                <p className="font-semibold text-gray-900">Fully Insured</p>
+                <p className="font-bold text-gray-900 mb-1">FIBA Approved</p>
+                <p className="text-sm text-gray-600">Certified installer of competition-grade flooring systems</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">📜</span>
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <FileCheck className="w-8 h-8 text-white" />
                 </div>
-                <p className="font-semibold text-gray-900">Industry Certified</p>
+                <p className="font-bold text-gray-900 mb-1">EU13036-2011</p>
+                <p className="text-sm text-gray-600">European sports flooring standard compliance</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">✅</span>
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Shield className="w-8 h-8 text-white" />
                 </div>
-                <p className="font-semibold text-gray-900">Quality Guaranteed</p>
+                <p className="font-bold text-gray-900 mb-1">Fully Insured</p>
+                <p className="text-sm text-gray-600">Comprehensive public liability and workers compensation</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">🌱</span>
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-800 to-slate-900 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <CheckCircle className="w-8 h-8 text-white" />
                 </div>
-                <p className="font-semibold text-gray-900">Eco-Friendly</p>
+                <p className="font-bold text-gray-900 mb-1">Quality Assured</p>
+                <p className="text-sm text-gray-600">Certified technicians and premium-grade materials</p>
               </div>
             </div>
           </div>
