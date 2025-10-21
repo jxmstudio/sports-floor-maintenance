@@ -140,25 +140,13 @@ export function Navigation() {
             {/* Contact Info with Icons */}
             <div className="flex items-center gap-4 px-4 py-2 bg-gradient-to-r from-gray-50 to-orange-50 rounded-xl border border-gray-200">
               <a 
-                href="tel:0415894869" 
+                href="tel:0457776688" 
                 className="flex items-center gap-2 text-sm group transition-all duration-300"
               >
                 <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors">
                   <Phone className="w-4 h-4 text-white" />
                 </div>
-                <span className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">0415894869</span>
-              </a>
-              
-              <div className="w-px h-6 bg-gray-300"></div>
-              
-              <a 
-                href="mailto:info@sportsfloorau.com.au" 
-                className="flex items-center gap-2 text-sm group transition-all duration-300"
-              >
-                <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center group-hover:bg-blue-800 transition-colors">
-                  <Mail className="w-4 h-4 text-white" />
-                </div>
-                <span className="font-medium text-gray-700 group-hover:text-blue-700 transition-colors">Email Us</span>
+                <span className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">0457 77 66 88</span>
               </a>
             </div>
 
@@ -240,8 +228,7 @@ export function Navigation() {
               className="px-4 pt-4 space-y-2"
             >
               <div className="text-sm text-gray-600">
-                <div className="font-semibold">0415894869</div>
-                <div>info@sportsfloorau.com.au</div>
+                <div className="font-semibold">0457 77 66 88</div>
               </div>
               <Button
                 size="sm"

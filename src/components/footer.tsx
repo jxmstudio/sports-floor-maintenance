@@ -113,11 +113,7 @@ export function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center text-gray-400">
                   <Phone className="w-5 h-5 mr-3 text-orange-500" />
-                  <span>0415894869</span>
-                </div>
-                <div className="flex items-center text-gray-400">
-                  <Mail className="w-5 h-5 mr-3 text-orange-500" />
-                  <span>info@sportsfloorau.com.au</span>
+                  <span>0457 77 66 88</span>
                 </div>
                 <div className="flex items-center text-gray-400">
                   <MapPin className="w-5 h-5 mr-3 text-orange-500" />

@@ -9,6 +9,19 @@ import Link from "next/link"
 
 const services = [
   {
+    icon: Shield,
+    title: "Recoating / Maintenance",
+    description: "Annual recoating services to protect timber, restore traction, and maintain your floor's appearance and performance.",
+    features: [
+      "EU13036-2011 certified",
+      "24-48 hour turnaround",
+      "Grip restoration",
+      "Protective coating application"
+    ],
+    color: "blue",
+    href: "/services/recoating-maintenance"
+  },
+  {
     icon: Sparkles,
     title: "Sanding & Finishing",
     description: "Complete floor restoration using belt sanding technology for perfectly flat, smooth surfaces ready for high-performance play.",
@@ -20,19 +33,6 @@ const services = [
     ],
     color: "orange",
     href: "/services/sanding-finishing"
-  },
-  {
-    icon: Shield,
-    title: "Recoating & Maintenance",
-    description: "Annual recoating services to protect timber, restore traction, and maintain your floor's appearance and performance.",
-    features: [
-      "EU13036-2011 certified",
-      "24-48 hour turnaround",
-      "Grip restoration",
-      "Protective coating application"
-    ],
-    color: "blue",
-    href: "/services/recoating-maintenance"
   },
   {
     icon: Users,
@@ -48,21 +48,8 @@ const services = [
     href: "/services/line-marking"
   },
   {
-    icon: Star,
-    title: "Sports Floor Cleaning",
-    description: "Professional deep cleaning to remove buildup, restore grip, and extend the life of your timber or vinyl sports floor.",
-    features: [
-      "Annual deep cleaning",
-      "Removes sweat & oils",
-      "Restores surface grip",
-      "Protects floor coating"
-    ],
-    color: "green",
-    href: "/services/cleaning"
-  },
-  {
     icon: Zap,
-    title: "KTL Sprung Floors",
+    title: "Supply & Install of Sprung Floors",
     description: "FIBA approved sprung flooring systems - supply and installation for elite sports venues across Australia.",
     features: [
       "FIBA certified systems",
@@ -72,6 +59,19 @@ const services = [
     ],
     color: "red",
     href: "/services/sprung-floors"
+  },
+  {
+    icon: Star,
+    title: "Annual Cleaning",
+    description: "Professional deep cleaning to remove buildup, restore grip, and extend the life of your timber or vinyl sports floor.",
+    features: [
+      "Annual deep cleaning",
+      "Removes sweat & oils",
+      "Restores surface grip",
+      "Protects floor coating"
+    ],
+    color: "green",
+    href: "/services/cleaning"
   }
 ]
 

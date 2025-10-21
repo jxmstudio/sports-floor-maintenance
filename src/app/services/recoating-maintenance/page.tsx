@@ -65,11 +65,10 @@ export default function RecoatingMaintenancePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
-              { number: "15+", label: "Years Experience" },
-              { number: "500+", label: "Floors Maintained" },
+              { number: "25+", label: "Years Experience" },
               { number: "24-48hr", label: "Turnaround" },
               { number: "100%", label: "Satisfaction" }
             ].map((stat, i) => (

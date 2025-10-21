@@ -67,26 +67,8 @@ export function ContactFormSection() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Call Us</h3>
                     <p className="text-gray-600 mb-2">Mon-Fri: 7AM-6PM</p>
-                    <a href="tel:0415894869" className="text-orange-600 font-semibold text-lg hover:text-orange-700">
-                      0415894869
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Email Card */}
-            <Card className="border-2 border-gray-100 hover:border-orange-200 transition-all duration-300 hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Email Us</h3>
-                    <p className="text-gray-600 mb-2">Quick response time</p>
-                    <a href="mailto:info@sportsfloorau.com.au" className="text-blue-700 font-semibold hover:text-blue-800">
-                      info@sportsfloorau.com.au
+                    <a href="tel:0457776688" className="text-orange-600 font-semibold text-lg hover:text-orange-700">
+                      0457 77 66 88
                     </a>
                   </div>
                 </div>

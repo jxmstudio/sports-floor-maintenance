@@ -46,9 +46,9 @@ export function CTASection() {
                 <Button
                   variant="outline"
                   className="border-emerald-200 text-emerald-700 hover:bg-emerald-50"
-                  onClick={() => window.open('tel:0415894869', '_self')}
+                  onClick={() => window.open('tel:0457776688', '_self')}
                 >
-                  Call 0415894869
+                  Call 0457 77 66 88
                 </Button>
               </motion.div>
 
