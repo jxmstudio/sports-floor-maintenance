@@ -16,13 +16,24 @@ export default function SprungFloorsPage() {
       <section className="pt-28 pb-16 bg-gradient-to-br from-orange-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
+            {/* FIBA Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 text-orange-800 px-6 py-2 rounded-full text-sm font-semibold mb-6"
+            >
+              <Award className="w-4 h-4" />
+              FIBA Approved Systems
+            </motion.div>
+            
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">KTL Sprung Floor Supply & Installation</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Premium Sprung Flooring Solutions for Sports Venues</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Premium FIBA approved sprung flooring solutions for sports venues</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="max-w-4xl mx-auto mt-8">
             <p className="text-lg text-gray-700 leading-relaxed">
-              At Sports Floor Maintenance Australia, we supply and install KTL sprung flooring systems—a world‑class solution combining durability, performance, and tailored engineering. Whether you're building a gymnasium, stadium, recreation centre or multi‑purpose hall, we deliver sprung floors designed for your site's specific needs.
+              At Sports Floor Maintenance Australia, we supply and install <strong className="text-orange-600">FIBA approved</strong> KTL sprung flooring systems—a world‑class solution combining durability, performance, and tailored engineering. Whether you're building a gymnasium, stadium, recreation centre or multi‑purpose hall, we deliver premium sprung floors designed for your site's specific needs and certified for professional competition.
             </p>
           </motion.div>
         </div>
@@ -42,8 +53,8 @@ export default function SprungFloorsPage() {
               icon: Shield,
               gradient: "from-orange-500 to-orange-600"
             },{
-              title: "Performance Certified",
-              desc: "Many KTL systems are tested and certified to FIBA competition levels, as well as meeting relevant EN/DIN/ISO standards. This ensures they are suitable for elite sport, endurance, and safety.",
+              title: "FIBA Approved & Performance Certified",
+              desc: "KTL systems are FIBA approved and tested to competition levels, meeting relevant EN/DIN/ISO standards. Certified for elite sport, professional play, endurance, and safety.",
               icon: Award,
               gradient: "from-blue-700 to-blue-800"
             },{
