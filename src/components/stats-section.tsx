@@ -85,12 +85,47 @@ export function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center"
+              whileHover={{ 
+                y: -5,
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+              className="text-center group"
             >
-                      <div className="text-3xl lg:text-4xl font-bold text-orange-600 mb-2">
-                <AnimatedCounter end={stat.number} suffix={stat.suffix} />
+              <div className="relative inline-block mb-4">
+                {/* Background circle */}
+                <svg className="w-32 h-32 transform -rotate-90">
+                  <circle
+                    cx="64"
+                    cy="64"
+                    r="56"
+                    stroke="currentColor"
+                    strokeWidth="8"
+                    fill="none"
+                    className="text-orange-100"
+                  />
+                  <motion.circle
+                    cx="64"
+                    cy="64"
+                    r="56"
+                    stroke="currentColor"
+                    strokeWidth="8"
+                    fill="none"
+                    strokeDasharray={2 * Math.PI * 56}
+                    initial={{ strokeDashoffset: 2 * Math.PI * 56 }}
+                    whileInView={{ strokeDashoffset: 0 }}
+                    transition={{ duration: 2, delay: index * 0.2, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="text-orange-500"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="text-2xl lg:text-3xl font-bold text-orange-600 group-hover:scale-110 transition-transform duration-300">
+                    <AnimatedCounter end={stat.number} suffix={stat.suffix} />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors duration-300">
                 {stat.label}
               </h3>
               <p className="text-sm text-gray-600">
@@ -113,34 +148,61 @@ export function StatsSection() {
               Professional Certifications & Standards
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <p className="font-bold text-gray-900 mb-1">FIBA Approved</p>
-                <p className="text-sm text-gray-600">Certified installer of competition-grade flooring systems</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <FileCheck className="w-8 h-8 text-white" />
-                </div>
-                <p className="font-bold text-gray-900 mb-1">EU13036-2011</p>
-                <p className="text-sm text-gray-600">European sports flooring standard compliance</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <p className="font-bold text-gray-900 mb-1">Fully Insured</p>
-                <p className="text-sm text-gray-600">Comprehensive public liability and workers compensation</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-800 to-slate-900 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <p className="font-bold text-gray-900 mb-1">Quality Assured</p>
-                <p className="text-sm text-gray-600">Certified technicians and premium-grade materials</p>
-              </div>
+              {[
+                {
+                  icon: Award,
+                  title: "FIBA Approved",
+                  description: "Certified installer of competition-grade flooring systems",
+                  gradient: "from-orange-500 to-orange-600"
+                },
+                {
+                  icon: FileCheck,
+                  title: "EU13036-2011",
+                  description: "European sports flooring standard compliance",
+                  gradient: "from-blue-700 to-blue-800"
+                },
+                {
+                  icon: Shield,
+                  title: "Fully Insured",
+                  description: "Comprehensive public liability and workers compensation",
+                  gradient: "from-orange-600 to-red-600"
+                },
+                {
+                  icon: CheckCircle,
+                  title: "Quality Assured",
+                  description: "Certified technicians and premium-grade materials",
+                  gradient: "from-blue-800 to-slate-900"
+                }
+              ].map((cert, idx) => (
+                <motion.div
+                  key={cert.title}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    y: -8,
+                    scale: 1.05,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="glass-card rounded-xl p-6 text-center border-2 border-gray-100 hover:border-orange-200 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <motion.div 
+                    className={`w-16 h-16 bg-gradient-to-br ${cert.gradient} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10`}
+                    whileHover={{ 
+                      scale: 1.15,
+                      rotate: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <cert.icon className="w-8 h-8 text-white" />
+                  </motion.div>
+                  <p className="font-bold text-gray-900 mb-1 relative z-10 group-hover:text-orange-600 transition-colors duration-300">{cert.title}</p>
+                  <p className="text-sm text-gray-600 relative z-10">{cert.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>

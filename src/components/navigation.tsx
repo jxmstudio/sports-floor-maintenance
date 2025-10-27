@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useSpring } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react"
 import Image from "next/image"
@@ -28,6 +28,13 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,16 +46,24 @@ export function Navigation() {
   }, [])
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-white shadow-lg border-b-2 border-orange-500/20" 
-          : "bg-white/98 backdrop-blur-sm shadow-md"
-      }`}
-    >
+    <>
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 origin-left z-[100]"
+        style={{ scaleX }}
+      />
+      
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled 
+            ? "glass-nav shadow-2xl border-b border-orange-500/20" 
+            : "bg-white/95 backdrop-blur-md shadow-lg"
+        }`}
+        style={{ marginTop: '4px' }}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo */}
@@ -245,5 +260,6 @@ export function Navigation() {
         </motion.div>
       </div>
     </motion.header>
+    </>
   )
 }

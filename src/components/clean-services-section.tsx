@@ -103,38 +103,62 @@ export function CleanServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
             >
               <Link href={service.href} className="block h-full">
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white cursor-pointer group">
-                <CardHeader className="pb-4">
-                  <div className={`w-12 h-12 bg-${service.color}-100 rounded-lg flex items-center justify-center mb-4`}>
-                    <service.icon className={`w-6 h-6 text-${service.color}-600`} />
-                  </div>
-                  <CardTitle className="text-xl font-semibold text-gray-900">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={feature}
-                        className="flex items-center text-sm text-gray-600"
-                      >
-                        <div className={`w-1.5 h-1.5 rounded-full bg-${service.color}-500 mr-3`} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all">
-                    Learn More
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </CardContent>
-              </Card>
+                <Card className="h-full glass-card hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-orange-200 cursor-pointer group relative overflow-hidden card-3d">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <CardHeader className="pb-4 relative z-10">
+                    <motion.div 
+                      className={`w-14 h-14 bg-gradient-to-br from-${service.color}-100 to-${service.color}-200 rounded-xl flex items-center justify-center mb-4 shadow-md`}
+                      whileHover={{ 
+                        scale: 1.15,
+                        rotate: 10,
+                        transition: { duration: 0.3 }
+                      }}
+                    >
+                      <service.icon className={`w-7 h-7 text-${service.color}-600`} />
+                    </motion.div>
+                    <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4 relative z-10">
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <motion.li
+                          key={feature}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: featureIndex * 0.05 }}
+                          viewport={{ once: true }}
+                          className="flex items-center text-sm text-gray-600"
+                        >
+                          <div className={`w-2 h-2 rounded-full bg-${service.color}-500 mr-3 group-hover:scale-125 transition-transform duration-300`} />
+                          {feature}
+                        </motion.li>
+                      ))}
+                    </ul>
+                    <motion.div 
+                      className="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-4 transition-all duration-300"
+                      whileHover={{ x: 5 }}
+                    >
+                      Learn More
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </motion.div>
+                  </CardContent>
+                </Card>
               </Link>
             </motion.div>
           ))}

@@ -7,44 +7,59 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "FIBA Court Installation",
+    title: "Professional Sports Floor Finishing",
     venue: "Recreation Centre",
     location: "Melbourne, VIC",
-    service: "Sprung Floor Installation",
-    description: "Complete FIBA approved sprung floor system with competition-grade finish and multi-sport line marking.",
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop",
-    badge: "FIBA Certified",
-    badgeColor: "orange"
+    service: "Sanding & Finishing",
+    description: "Professional sanding and finishing with belt sanding technology for a perfectly flat, competition-ready surface.",
+    image: "/20240114_110844-EDIT.jpg",
+    badge: "Premium Finish",
+    badgeColor: "orange",
+    size: "large" // Hero project
   },
   {
-    title: "Basketball Court Recoating",
+    title: "Court Line Marking",
     venue: "High School Gymnasium",
     location: "Adelaide, SA",
-    service: "Annual Recoating",
-    description: "48-hour turnaround recoating service during school holidays. Restored grip and appearance for upcoming season.",
-    image: "https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?q=80&w=800&auto=format&fit=crop",
-    badge: "Fast Turnaround",
-    badgeColor: "blue"
+    service: "Line Marking",
+    description: "Precision line marking for basketball courts with professional-grade paint and equipment.",
+    image: "/20240114_122341.jpg",
+    badge: "Line Marking",
+    badgeColor: "blue",
+    size: "medium"
   },
   {
-    title: "Multi-Sport Line Marking",
+    title: "Floor Maintenance",
     venue: "Community Sports Complex",
     location: "Sydney, NSW",
-    service: "Line Marking",
-    description: "Color-coded line marking for basketball, netball, and volleyball on single court surface.",
-    image: "https://images.unsplash.com/photo-1519766304817-4f37bda74a26?q=80&w=800&auto=format&fit=crop",
-    badge: "Multi-Sport",
-    badgeColor: "purple"
+    service: "Maintenance",
+    description: "Regular maintenance and inspection services to keep your sports floor in peak condition.",
+    image: "/20240104_131215.jpg",
+    badge: "Maintenance",
+    badgeColor: "green",
+    size: "medium"
   },
   {
-    title: "Complete Floor Restoration",
+    title: "Complete Court Restoration",
     venue: "University Sports Hall",
     location: "Canberra, ACT",
-    service: "Sanding & Finishing",
-    description: "Full sand and refinish of 15-year-old floor. Belt sanding for perfect flatness, followed by professional polyurethane finish.",
-    image: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?q=80&w=800&auto=format&fit=crop",
-    badge: "Full Restoration",
-    badgeColor: "green"
+    service: "Full Restoration",
+    description: "Comprehensive floor restoration including sanding, finishing, and line marking for a brand new appearance.",
+    image: "/20240114_141921.jpg",
+    badge: "Restoration",
+    badgeColor: "purple",
+    size: "small"
+  },
+  {
+    title: "Professional Equipment",
+    venue: "On-site",
+    location: "Australia Wide",
+    service: "Equipment",
+    description: "State-of-the-art equipment ensuring superior results and efficient service delivery.",
+    image: "/20240120_184747.jpg",
+    badge: "Technology",
+    badgeColor: "orange",
+    size: "small"
   }
 ]
 
@@ -74,59 +89,105 @@ export function ProjectsPreviewSection() {
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="overflow-hidden border-2 border-gray-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300 h-full">
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-gray-200">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  
-                  {/* Badge */}
-                  <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold text-white ${
-                    project.badgeColor === 'orange' ? 'bg-orange-500' :
-                    project.badgeColor === 'blue' ? 'bg-blue-600' :
-                    project.badgeColor === 'purple' ? 'bg-purple-600' :
-                    'bg-green-600'
-                  }`}>
-                    {project.badge}
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {projects.map((project, index) => {
+            // Define grid spans for bento layout
+            const gridClass = project.size === 'large' 
+              ? 'lg:col-span-2 lg:row-span-2' 
+              : project.size === 'medium'
+              ? 'lg:col-span-2'
+              : 'lg:col-span-1'
+            
+            const imageHeight = project.size === 'large' 
+              ? 'h-96' 
+              : project.size === 'medium'
+              ? 'h-64'
+              : 'h-48'
+            
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className={`${gridClass}`}
+              >
+                <Card className="overflow-hidden glass-card border-2 border-gray-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-500 h-full group relative">
+                  {/* Project Image */}
+                  <div className={`relative ${imageHeight} overflow-hidden bg-gray-200`}>
+                    <motion.img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Gradient overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Badge */}
+                    <motion.div 
+                      initial={{ scale: 0, x: -50 }}
+                      whileInView={{ scale: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                      viewport={{ once: true }}
+                      className={`absolute top-4 left-4 px-4 py-2 rounded-full text-sm font-bold text-white shadow-lg backdrop-blur-sm ${
+                        project.badgeColor === 'orange' ? 'bg-gradient-to-r from-orange-500 to-orange-600' :
+                        project.badgeColor === 'blue' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
+                        project.badgeColor === 'purple' ? 'bg-gradient-to-r from-purple-500 to-purple-600' :
+                        'bg-gradient-to-r from-green-500 to-green-600'
+                      }`}
+                    >
+                      {project.badge}
+                    </motion.div>
+                    
+                    {/* Location */}
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                      viewport={{ once: true }}
+                      className="absolute bottom-4 left-4 flex items-center gap-2 text-white glass-effect px-3 py-2 rounded-lg"
+                    >
+                      <MapPin className="w-4 h-4" />
+                      <span className="text-sm font-semibold">{project.location}</span>
+                    </motion.div>
+                    
+                    {/* Hover overlay with service */}
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <div className="glass-card px-6 py-3 rounded-xl border border-white/30">
+                        <p className="text-white font-semibold">View Project Details</p>
+                      </div>
+                    </motion.div>
                   </div>
-                  
-                  {/* Location */}
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-medium">{project.location}</span>
-                  </div>
-                </div>
 
-                <CardContent className="p-6">
-                  <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full mb-3">
-                      {project.service}
-                    </span>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{project.title}</h3>
-                    <p className="text-sm text-gray-600">{project.venue}</p>
-                  </div>
-                  
-                  <p className="text-gray-700 leading-relaxed">
-                    {project.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                  <CardContent className={`p-6 ${project.size === 'large' ? 'space-y-4' : 'space-y-2'}`}>
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-xs font-bold rounded-full mb-3">
+                        {project.service}
+                      </span>
+                      <h3 className={`${project.size === 'large' ? 'text-2xl' : 'text-lg'} font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors duration-300`}>
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 font-medium">{project.venue}</p>
+                    </div>
+                    
+                    {project.size !== 'small' && (
+                      <p className="text-gray-700 leading-relaxed">
+                        {project.description}
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* Note for Real Photos */}
